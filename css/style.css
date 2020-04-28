@@ -1,0 +1,134 @@
+/* font-family: 'Baloo Bhaina 2', cursive; */
+:root {
+  --primary-color: #333333;
+  --secondary-color: orange;
+  --button: rgb(102, 80, 7);
+  --button-hover: rgb(212, 174, 46);
+  --overlay-color: rgba(90, 90, 79, 0.6);
+  --menu-speed: 2s;
+}
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Baloo Bhaina 2", cursive;
+  line-height: 1.4rem;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem 2rem;
+  text-align: center;
+  overflow: hidden;
+}
+.btn{
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    background: var(--button);
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    margin: 2rem 0;
+    transition: var(--menu-speed);
+}
+.btn:hover{
+    background: var(--button-hover);
+}
+
+/* Menu-wrap */
+#menu-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#menu-wrap .chbx{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+#menu-wrap .hamburger{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  z-index: 1;
+ 
+}
+
+#menu-wrap .hamburger > div{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+}
+
+#menu-wrap .hamburger > div::before,
+#menu-wrap .hamburger > div::after{
+  content: '';
+  position: absolute;
+  top: -12px;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+}
+
+#menu-wrap .hamburger > div::after{
+  top: 12px;
+}
+
+/* SHOWCASE */
+#showcase {
+  position: relative;
+  background: var(--overlay-color);
+  height: 100vh;
+  color: #ffffff;
+}
+#showcase:before {
+  content: "";
+  background: url("/images/showcase.jpeg") no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#showcase h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 2px 1px black;
+}
+
+#showcase p {
+  font-size: 1.3rem;
+}
