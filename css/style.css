@@ -4,8 +4,8 @@
   --secondary-color: orange;
   --button: rgb(102, 80, 7);
   --button-hover: rgb(212, 174, 46);
-  --overlay-color: rgba(90, 90, 79, 0.6);
-  --menu-speed: 2s;
+  --overlay-color: rgba(27, 27, 23, 0.75);
+  --menu-speed: 1s;
 }
 
 /* Reset */
@@ -25,55 +25,55 @@
   text-align: center;
   overflow: hidden;
 }
-.btn{
-    display: inline-block;
-    border: none;
-    border-radius: 5px;
-    background: var(--button);
-    color: #ffffff;
-    font-size: 1.1rem;
-    padding: 0.75rem 1.5rem;
-    margin: 2rem 0;
-    transition: var(--menu-speed);
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  background: var(--button);
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  margin: 2rem 0;
+  transition: var(--menu-speed);
 }
-.btn:hover{
-    background: var(--button-hover);
+.btn:hover {
+  background: var(--button-hover);
+  transform: scale(1.1);
 }
 
 /* Menu-wrap */
-#menu-wrap{
+#menu-wrap {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
 }
 
-#menu-wrap .chbx{
+#menu-wrap .chbx {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
   opacity: 0;
   z-index: 2;
 }
 
-#menu-wrap .hamburger{
+#menu-wrap .hamburger {
   position: absolute;
   top: 0;
   left: 0;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--primary-color);
   z-index: 1;
- 
 }
 
-#menu-wrap .hamburger > div{
+#menu-wrap .hamburger > div {
   position: relative;
   display: flex;
   align-items: center;
@@ -81,11 +81,12 @@
   width: 100%;
   height: 2px;
   background: #ffffff;
+  transition: all 0.5s ease-in;
 }
 
 #menu-wrap .hamburger > div::before,
-#menu-wrap .hamburger > div::after{
-  content: '';
+#menu-wrap .hamburger > div::after {
+  content: "";
   position: absolute;
   top: -12px;
   width: 100%;
@@ -93,8 +94,81 @@
   background: #ffffff;
 }
 
-#menu-wrap .hamburger > div::after{
+#menu-wrap .hamburger > div::after {
   top: 12px;
+}
+
+/* Rotation of hamburger icon */
+#menu-wrap .chbx:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Rotates lines in hamburger */
+
+#menu-wrap .chbx:checked + .hamburger > div::before,
+#menu-wrap .chbx:checked + .hamburger > div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotates on hover */
+#menu-wrap .chbx:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+/* Menu in hamburgers */
+#menu-wrap .menu {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+
+#menu-wrap .chbx:checked ~ .menu {
+  visibility: visible;
+}
+
+#menu-wrap .chbx:checked ~ .menu > div {
+  transform: scale(1);
+}
+
+#menu-wrap .menu > div {
+  background: var(--overlay-color);
+  border-radius: 100%;
+  border-radius: 50%;
+  width: 300vh;
+  height: 200vh;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  /* transition: all var(--menu-speed) ease; */
+  transition: all 0.2s ease;
+}
+
+#menu-wrap .menu > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu-wrap .menu > div > div > ul > li {
+  font-size: 2rem;
+  color: #ffffff;
+  list-style: none;
+  padding: 1.3rem;
+}
+
+#menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  transition: all 1.5s ease;
+}
+
+#menu-wrap .menu > div > div > ul > li > a:hover {
+  color: var(--secondary-color);
 }
 
 /* SHOWCASE */
@@ -106,7 +180,8 @@
 }
 #showcase:before {
   content: "";
-  background: url("/images/showcase.jpeg") no-repeat center center/cover;
+  background: url("../images/menu-restaurant-vintage-table.jpg") no-repeat
+    center center/cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -131,4 +206,35 @@
 
 #showcase p {
   font-size: 1.3rem;
+}
+
+/* Pizza Page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About Page */
+#about-wrap{
+  background-color: var(--primary-color);
+  height: 100vh;
+}
+.about-content{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
