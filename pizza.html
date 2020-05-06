@@ -9,7 +9,10 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/menu.css" />
-    <link rel="stylesheet" media="screen and (max-width: 980px)" href="css/tablet.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/tablet.css">
+    <link rel="stylesheet" media="screen and (max-width: 500px)" href="css/phone.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <title>Document</title>
   </head>
   <body>
@@ -31,12 +34,30 @@
       </div>
     </div>
 
+<!-- Drinks -->
+    <nav id="navbar">
+    <ul>
+      <li><a href="#">Drinks</a>
+        <ul>
+          <li><a href="#">Pepsi</a> </li>
+          <li><a href="#">Cola</a> </li>
+          <li><a href="#">7 UP</a> </li>
+          <li><a href="#">Sunkist</a></li>
+          <li><a href="#">Solo</a> </li>
+        </ul>
+      </li>
+    </ul>
+    </nav>
+
+
+<!-- Pizza Content -->
     <section id="pizza-wrap">
       <div class="container pizza-content">
         <!-- Classic section -->
         <h1 class="l-heading">Pizza: Classic</h1>
         <div class="classic">
           <div class="classic-content">
+
             <div class="box">
               <div class="box-img">
                 <img src="./images/pizza-1.jpeg" alt="" />
@@ -172,5 +193,9 @@
         </div>
       </div>
     </section>
+
+    <script>
+      console.log(window.screen.height)
+    </script>
   </body>
 </html>

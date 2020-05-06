@@ -1,7 +1,17 @@
-@media screen and (max-width: 980px){
-    section#pizza-wrap{
-        display: none;
+@media screen and (max-width: 768px){
+    body{
+        background-color: #333333;
+        box-sizing: border-box;
     }
+
+    section#pizza-wrap .classic .classic-content,
+    section#pizza-wrap .premium .premium-content
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+               
+      }
 
 
 
