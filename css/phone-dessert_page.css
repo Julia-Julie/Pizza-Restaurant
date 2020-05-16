@@ -1,0 +1,16 @@
+@media screen and (max-width: 500px) {
+  /* Desserts page */
+
+  body {
+    background: var(--primary-color);
+  }
+
+  #desserts-wrap .desserts-content {
+    grid-template-columns: 1fr;
+  }
+
+  .desserts-content h1 {
+    display: grid;
+    grid-column: 1 / span 1;
+  }
+}

@@ -1,0 +1,32 @@
+@media screen and (min-height: 1000px) {
+  /* Desserts Page */
+
+  .desserts-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 3rem;
+    padding: 1rem;
+  }
+
+  .desserts-content h1 {
+    display: grid;
+    grid-column: 1 / span 2;
+  }
+
+  .desserts-content .dess-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 150px;
+    margin-bottom: 0.5rem;
+  }
+  .desserts-content img {
+    display: block;
+    height: 100%;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+  }
+}

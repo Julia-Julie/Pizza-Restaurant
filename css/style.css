@@ -6,8 +6,8 @@
   --button: rgb(102, 80, 7);
   --button-hover: rgb(212, 174, 46);
   --overlay-color: rgba(27, 27, 23, 0.75);
-   --menu-speed: 1s;
-
+  --menu-speed: 1s;
+  --dessert-speed: 2.5s;
 }
 
 /* Reset */
@@ -18,6 +18,10 @@
   font-family: "Baloo Bhaina 2", cursive;
   line-height: 1.1rem;
   text-decoration: none;
+  /* background-color: var(--primary-color); */
+}
+body {
+  background-color: var(--primary-color);
 }
 
 .container {
@@ -43,21 +47,18 @@
   transform: scale(1.1);
 }
 
-.l-heading{
+.l-heading {
   font-size: 2rem;
-  padding: 2.1rem 0 0.5rem 0 ;
+  padding: 1rem;
   text-shadow: 1px 2px 1px var(--secondary-color);
-  
 }
 
-.m-heading{
+.m-heading {
   font-size: 1.5rem;
   padding: 0.3rem 0;
 }
 
-
-
-.clk{
+.clk {
   display: block;
   font-size: 1rem;
   color: black;
@@ -66,14 +67,11 @@
   transition: all 0.5s ease-in-out;
 }
 
-.clk:hover{
+.clk:hover {
   transform: scale(1.1);
   color: var(--button-hover);
   border-radius: 5px;
 }
-
-
-
 
 /* Menu-wrap */
 #menu-wrap {
@@ -242,169 +240,179 @@
   font-size: 1.3rem;
 }
 
-
-
-
-
 /* Pizza Page */
-#navbar{
+#navbar {
   position: fixed;
   top: 10px;
   right: 10px;
-  z-index:1;
+  z-index: 1;
   background-color: var(--secondary-color);
   width: 90px;
   height: 40px;
   text-align: center;
   border-radius: 2px;
- 
-  
 }
 
-#navbar ul{
+#navbar ul {
   position: relative;
-  
 }
 
-#navbar ul li{
-list-style: none;
-color: #333333;
-
+#navbar ul li {
+  list-style: none;
+  color: #333333;
 }
-#navbar ul li a{
+#navbar ul li a {
   padding: 0 0 0.65rem 0;
   /* margin-bottom: 0; */
 }
-#navbar ul li > a{
+#navbar ul li > a {
   display: block;
   padding-top: 0.8rem;
   /* margin: auto; */
-
 }
 
-#navbar ul li ul{
+#navbar ul li ul {
   /* position: absolute; */
   background-color: var(--secondary-color);
 }
 
-#navbar ul li a{
+#navbar ul li a {
   list-style: none;
   color: inherit;
-  
-  }
-
-
-
-
+}
 
 #navbar ul li ul li:hover {
-  background-color: var(--dropdown-color); 
- 
-  
+  background-color: var(--dropdown-color);
 }
-#navbar ul li a:hover{
-    color: var(--primary-color);
-    box-shadow: 2px 3px 2px var(--secondary-color);
-   
-   
+#navbar ul li a:hover {
+  color: var(--primary-color);
+  box-shadow: 2px 3px 2px var(--secondary-color);
 }
 #navbar ul li ul {
   display: none;
 }
 
-#navbar ul li:hover ul{
+#navbar ul li:hover ul {
   display: block;
 }
 
-
-
-
-
-
-
-
-
-section#pizza-wrap{
+section#pizza-wrap {
   height: 100vh;
   background-color: var(--primary-color);
   color: #ffffff;
-  position: relative; 
+  position: relative;
 }
 
-
-section#pizza-wrap .pizza-content{
-height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-content: space-between;
+section#pizza-wrap .pizza-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
 }
-
-
 
 /* Classic Section */
-section#pizza-wrap .classic .classic-content{
+section#pizza-wrap .classic .classic-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
 }
 
-section#pizza-wrap .box{
+section#pizza-wrap .box {
   display: flex;
   flex-direction: column;
   margin: 0 1rem;
-  }
+}
 
 section#pizza-wrap .box .box-img img {
   margin: 0;
   width: 190px;
   height: 140px;
   /* width: 100%; */
-  
 }
-
 
 section#pizza-wrap .box .box-content > div {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  
-  
 }
 
 /* Premium Section */
-section#pizza-wrap .premium .premium-content{
+section#pizza-wrap .premium .premium-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* About Page */
-#about-wrap{
-  background-color: var(--primary-color);
+/* Desserts Page */
+#desserts-wrap {
   height: 100vh;
+  background-color: var(--primary-color);
+  color: #ffffff;
 }
-.about-content{
-  height: 100%;
+.desserts-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.desserts-content h1 {
+  display: grid;
+  grid-column: 1 / span 3;
+}
+
+.desserts-content > div {
+  border: 1px solid gray;
+  padding: 0.6rem 1rem;
+  transition: var(--dessert-speed);
+}
+.desserts-content > div:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 10px 1px #ffffff;
+}
+
+.desserts-content > div:nth-child(odd):hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.desserts-content > div:nth-child(even) {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.desserts-content > div:nth-child(even):hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.desserts-content > div:first-child:hover {
+  border: none;
+  padding: 0;
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.desserts-content .dess-img {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  width: auto;
+  height: 150px;
+  margin-bottom: 0.5rem;
+}
+.desserts-content img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.dess-description > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.desserts-content > div:first-child {
+  grid-column: 1 / span 3;
 }
