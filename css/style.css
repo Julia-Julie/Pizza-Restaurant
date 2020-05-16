@@ -27,7 +27,7 @@ body {
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 1rem 1.5rem;
+  padding: 1rem ;
   text-align: center;
   /* overflow: hidden; */
 }
@@ -207,7 +207,7 @@ body {
 #showcase {
   position: relative;
   background: var(--overlay-color);
-  height: 100vh;
+  height: 50vh;
   color: #ffffff;
 }
 #showcase:before {
@@ -239,6 +239,38 @@ body {
 #showcase p {
   font-size: 1.3rem;
 }
+
+/* Section Events */
+#events{
+  background-color: var(--secondary-color);
+}
+
+.events-content{
+  
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+
+}
+
+.events-content .card{
+   border: 1px solid red; 
+}
+
+.events-content img{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Pizza Page */
 #navbar {
