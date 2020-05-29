@@ -1,0 +1,32 @@
+/* INDEX PAGE */
+
+@media screen and (max-width: 500px) {
+  #showcase {
+    height: 45vh;
+  }
+
+  #showcase h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #showcase p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .news-content {
+    grid-template-columns: 1fr;
+  }
+
+  .news-content .card:first-child,
+  .news-content .card:last-child {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+  }
+
+  /* CONTACT PAGE */
+  #main-contact .contact-content > *:first-child {
+    height: 47vh;
+  }
+}
